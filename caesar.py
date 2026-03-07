@@ -1,15 +1,3 @@
-# Caesarian cipher encryption
-# Take in message
-# Take in shift number
-# Move message by shift number
-# Output encrypted message
-
-
-# from collections import deque
-
-# alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'h', 'i', 'j', 'k', 'l',
-#            'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z']
-
 def cShift(c, shift):
     return chr((ord(c) - ord('a') + shift) % 26 + ord('a'))
 
