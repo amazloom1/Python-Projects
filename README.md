@@ -13,3 +13,7 @@ A port scanner with common ports shown
 ### packSniff.py  
 
 A packet sniffer that gives information on the source and destination IP and port, with the transport layer protocol  
+
+### macstat
+
+A menu bar app that shows CPU and Memory usage as percentages
