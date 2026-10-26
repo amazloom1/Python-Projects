@@ -15,12 +15,15 @@ class macstats(rumps.App):
         super().__init__("macstats")
         psutil.cpu_percent()
         
-        rumps.MenuItem("Open Activity Monitor", callback=subprocess.run(["open", "-a", "Activity Monitor"]))
+        self.menu = rumps.MenuItem("Open Activity Monitor", callback=self.open_activity_monitor)
 
         self.title = "CPU --% | MEM --%"
 
         self.timer = rumps.Timer(self.update, 1)
         self.timer.start()
+
+    def open_activity_monitor(self, sender):
+        subprocess.run(["open", "-a", "Activity Monitor"])
 
     def update(self, sender):
         stats = get_stats()
