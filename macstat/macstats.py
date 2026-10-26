@@ -1,6 +1,7 @@
 import rumps
 import psutil
 from collections import namedtuple
+import subprocess
 
 Stats = namedtuple("Stats", ["cpu", "memory"])
 
@@ -14,6 +15,8 @@ class macstats(rumps.App):
         super().__init__("macstats")
         psutil.cpu_percent()
         
+        rumps.MenuItem("Open Activity Monitor", callback=subprocess.run(["open", "-a", "Activity Monitor"]))
+
         self.title = "CPU --% | MEM --%"
 
         self.timer = rumps.Timer(self.update, 1)
